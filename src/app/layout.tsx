@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Serif, Lobster } from "next/font/google";
 import "./globals.css";
+import classNames from "classnames";
+import NavBar from "@/components/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Serif({ subsets: ["latin"], variable: "--font-noto" });
+const lob = Lobster({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-lob",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,12 +18,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={classNames(noto.className, lob.variable)}>
+        <header>
+          <NavBar />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

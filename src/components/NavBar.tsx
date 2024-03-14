@@ -27,8 +27,8 @@ export default function NavBar() {
           </DrawerTrigger>
           <DrawerContent className="top-0 my-10 h-fit w-72 rounded-none">
             <div className="flex flex-col gap-6 p-2 items-center">
-              {headerContents.map((content) => (
-                <a href={content.link} className="decorate-none">
+              {headerContents.map((content, i) => (
+                <a href={content.link} className="decorate-none" key={i}>
                   {content.title}
                 </a>
               ))}
@@ -41,8 +41,8 @@ export default function NavBar() {
       <header className="hidden sm:flex justify-between p-4 items-center bg-primary w-screen">
         <h1 className="font-title text-3xl">QIITA ARTICLE RECORDER</h1>
         <div className="flex gap-x-4 text-sm">
-          {headerContents.map((content) => (
-            <a href={content.link} className="decorate-none">
+          {headerContents.map((content, i) => (
+            <a href={content.link} className="decorate-none" key={i}>
               {content.title}
             </a>
           ))}

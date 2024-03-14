@@ -11,7 +11,7 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 import BookIcon from "./BookIcon";
 import Image from "next/image";
 
-export default function ({
+export default function ArticleCard({
   article,
   handleRecordChange,
   recordList,
